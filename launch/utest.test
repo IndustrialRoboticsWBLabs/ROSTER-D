@@ -1,0 +1,33 @@
+<launch>
+	<!-- Start up system nodes here like launch file -->
+
+	<!-- Example Node Launch (needs a direct file path) -->
+	<include file="/home/wblabs/catkin_ws/src/realsense-ros/realsense2_camera/launch/rs_camera.launch"/>
+
+	<!-- Insert ROS integration tests here. Examples below, more can be found at: http://wiki.ros.org/rostest/Nodes -->
+
+	<!-- Example of ROS Hertz test used for testing publishing rates of a Topic -->
+	<param name="hztest1/topic" value="/example_topic_name" />
+	<param name="hztest1/hz" value="30.0" />
+	<param name="hztest1/hzerror" value="10" />
+	<param name="hztest1/test_duration" value="5.0" />
+	<test test-name="hztest_test" pkg="rostest" type="hztest" name="hztest1" />
+
+	<!-- Example of advertise test. This is used for testing if a topic or service is advertising -->
+	<test test-name="advertisetest_test" pkg="rostest" type="advertisetest" time-limit="60.0" retry="0">
+		<rosparam>
+			topics:
+			- name: /example_topic_name
+				timeout: 2.
+			services:
+			- name: /example_service_name
+				timeout: 10.
+    </rosparam>
+  </test>
+
+	<!-- Example of starting a rostest file. (this can be used to launch pytest files) Example: http://wiki.ros.org/rostest/Writing -->
+	<test test-name="insert_unique_test_name" pkg="insert_pkg_where_test_executable_is_found" type="insert_executable_name"  time-limit="limit_in_sec"/> <!-- Example of executable (not executable itself) script at test/rosutest.cpp -->
+
+	<!-- The ROS node integration testing and rostest file can be separated into separate .test files -->
+
+</launch>

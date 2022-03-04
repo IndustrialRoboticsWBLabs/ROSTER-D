@@ -1,0 +1,8 @@
+<launch>
+	<!-- Start up system nodes here like launch file -->
+	
+	<!-- Node Launch example: http://wiki.ros.org/roslaunch/XML -->
+	<node name="foo_node_name" pkg="foo" type="foo_node"> <!-- foo_node is the name of executable -->
+		<param name="foo_param" value="-1"/> <!-- example parameter -->
+	</node>
+</launch>

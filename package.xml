@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<!--######################### Example package.xml file for testing #######################################-->
+<package format="3">
+  <name>foo_pkg</name>
+  <version>0.0.0</version>
+  <description>An example of description</description>
+  <author email="example@example.com">firstname lastname</author>
+  <author>firstname lastname</author> <!-- second author -->
+  <maintainer email="example@example.com">firstname lastname</maintainer>
+  <license>Apache 2.0</license>
+	<!-- required build tool not necessary but good to use -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+	<!-- library dependencies during build -->
+  <depend>roscpp</depend>
+
+  <depend>libpcl-all-dev</depend>
+  <depend>eigen</depend>
+  <depend>yak</depend>
+  <depend>yak_ros_msgs</depend>
+
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>visualization_msgs</depend>
+
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_eigen</depend>
+
+  <depend>pcl_ros</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend condition="$BUILD_DEMO == True">gl_depth_sim</depend> <!-- conditional dependency -->
+	
+	<!-- rostest and ros unit testing dependencies -->
+  <test_depend>rosunit</test_depend>
+	<build_depend>rostest</build_depend>
+
+  <export>
+    <build_type>catkin</build_type>
+  </export>
+
+</package>
+
+<!--######################### End Example package.xml file for testing #######################################-->
+
